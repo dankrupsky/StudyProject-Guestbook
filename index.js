@@ -5,6 +5,11 @@ const router = express.Router();
 const port = 3000
 const pug = require('pug');
 
+var bodyParser = require('body-parser')
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
 
 const dataSample = require('./model/db.js');
 
@@ -18,11 +23,15 @@ app.set("views", path.join(__dirname, "views"));
 router.get("/", (req, res) => {
   let renderedResponse = "";
   for (i in dataSample) {
-    console.log(dataSample[i]);
     renderedResponse += pug.renderFile("./views/comment.pug", dataSample[i]);
-    console.log(renderedResponse);
   }
-  res.send(renderedResponse);
+  res.render("index", {content: renderedResponse});
+});
+
+router.post("/", (req, res) => {
+  console.log(req.body);
+  let renderedResponse = pug.renderFile("./views/comment.pug", {name: req.body['name-input-name'], date: "now", text: req.body["name-input-comment"]});
+  res.render("index", {content: renderedResponse});
 });
 
 app.use("/", router);

@@ -3,3 +3,10 @@ html
     title Render HTML using PUG
   body
     h1 Welcome
+    div
+      form(action='' method='post' formmethod="post")
+        input(type='text' name='name-input-name' id='id-comment-input')
+        input(type='text' name='name-input-comment' id='id-comment-input')
+        input(type='submit' value='Submit')
+    div
+      !=content
