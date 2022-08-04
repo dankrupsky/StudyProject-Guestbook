@@ -14,8 +14,7 @@ app.set("views", path.join(__dirname, "views"));
 
 
 router.get("/", (req, res) => {
-  res.render("index");
-  console.log(dataSample);
+  res.render("comment", {name: "John", date: "11.12.2022", text: "Hello, this is a new comment!"});
 });
 
 app.use("/", router);
