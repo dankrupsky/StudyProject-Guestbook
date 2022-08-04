@@ -4,6 +4,8 @@ const path = require("path");
 const router = express.Router();
 const port = 3000
 
+const dataSample = require('./datasample.js');
+
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/sp-guestbook";
 
@@ -13,6 +15,7 @@ app.set("views", path.join(__dirname, "views"));
 
 router.get("/", (req, res) => {
   res.render("index");
+  console.log(dataSample);
 });
 
 app.use("/", router);
