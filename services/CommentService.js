@@ -1,6 +1,6 @@
 const Comment = require('../models/Comment');
 
-module.exports = class Comment{
+module.exports = class CommentService{
     static async gelAllComments() {
         try {
             const allComments = await Comment.find();
