@@ -4,6 +4,17 @@ const path = require("path");
 const router = express.Router();
 const port = 3000
 const pug = require('pug');
+require('dotenv').config();
+
+const dbcontroller = require('./controllers/comment.controller.js')
+
+// DB init
+const mongoose =  require("mongoose");
+mongoose.connect(process.env.mongoURI, {useNewUrlParser: true, useUnifiedTopology: true })
+.then(res => console.log(`Connection Succesful ${res}`))
+.catch(err => console.log(`Error in DB connection ${err}`));
+
+
 
 var bodyParser = require('body-parser')
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
@@ -11,7 +22,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
 
-const dataSample = require('./model/db.js');
+// const dataSample = require('./model/db.js');
 
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/sp-guestbook";
@@ -33,6 +44,10 @@ router.post("/", (req, res) => {
   let renderedResponse = pug.renderFile("./views/comment.pug", {name: req.body['name-input-name'], date: "now", text: req.body["name-input-comment"]});
   res.render("index", {content: renderedResponse});
 });
+
+router.post("/addcomment", dbcontroller.apiAddComment);
+
+router.get("/getallcomments", dbcontroller.apiGetAllComments);
 
 app.use("/", router);
 

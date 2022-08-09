@@ -13,11 +13,11 @@ module.exports = class CommentService{
     static async addComment(data) {
         try {
             const newComment = {
-                name: data.username,
+                name: data.name,
                 text: data.text,
                 ip: data.ip,
             }
-            const response = await new Comment(this.addComment).save();
+            const response = await new Comment(newComment).save();
             return response;
         } catch (error) {
             console.log(`Failed to add new comment ${error}`)
