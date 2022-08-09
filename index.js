@@ -6,7 +6,7 @@ const port = 3000
 const pug = require('pug');
 require('dotenv').config();
 
-const dbcontroller = require('./controllers/comment.controller.js')
+const comments = require('./routes/comment.routes.js')
 
 // DB init
 const mongoose =  require("mongoose");
@@ -32,25 +32,16 @@ app.set("views", path.join(__dirname, "views"));
 
 
 router.get("/", (req, res) => {
-  let renderedResponse = "";
-  for (i in dataSample) {
-    renderedResponse += pug.renderFile("./views/comment.pug", dataSample[i]);
-  }
-  res.render("index", {content: renderedResponse});
+  console.log('default get');
+  res.send("get response");
 });
-
-router.post("/", (req, res) => {
-  console.log(req.body);
-  let renderedResponse = pug.renderFile("./views/comment.pug", {name: req.body['name-input-name'], date: "now", text: req.body["name-input-comment"]});
-  res.render("index", {content: renderedResponse});
-});
-
-router.post("/addcomment", dbcontroller.apiAddComment);
-
-router.get("/getallcomments", dbcontroller.apiGetAllComments);
 
 app.use("/", router);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+
+// endpoints
+app.use('/api/v1/comments', comments);
