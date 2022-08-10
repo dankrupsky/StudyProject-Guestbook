@@ -5,4 +5,4 @@ const dbcontroller = require('../controllers/comment.controller.js')
 router.post("/addcomment", dbcontroller.apiAddComment);
 router.get("/getallcomments", dbcontroller.apiGetAllComments);
 
-module.exports =  router;
+module.exports = router;

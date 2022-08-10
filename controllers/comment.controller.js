@@ -1,7 +1,7 @@
 const CommentService = require('../services/CommentService');
 
 
-module.exports = class Article{
+module.exports = class Comment{
     static async apiGetAllComments(req, res, next) {
         try {
             const comments = await CommentService.gelAllComments();

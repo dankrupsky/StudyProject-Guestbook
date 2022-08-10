@@ -5,8 +5,12 @@ html
     h1 Welcome
     div
       form(action='' method='post' formmethod="post")
-        input(type='text' name='name-input-name' id='id-comment-input')
-        input(type='text' name='name-input-comment' id='id-comment-input')
+        p Name:
+        input(type='text' name='name' id='id-comment-input')
+        p Comment:
+        input(type='text' name='text' id='id-comment-input')
+        br
+        br
         input(type='submit' value='Submit')
     div
       !=content

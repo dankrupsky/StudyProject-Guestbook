@@ -7,6 +7,8 @@ const pug = require('pug');
 require('dotenv').config();
 
 const comments = require('./routes/comment.routes.js')
+const renderer = require('./routes/render.routes.js')
+
 
 // DB init
 const mongoose =  require("mongoose");
@@ -31,12 +33,7 @@ app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
 
-router.get("/", (req, res) => {
-  console.log('default get');
-  res.send("get response");
-});
-
-app.use("/", router);
+app.use("/", renderer);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
