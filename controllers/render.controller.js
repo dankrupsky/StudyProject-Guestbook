@@ -10,7 +10,7 @@ module.exports = class Comment{
             }
             let renderedResponse = "";
             for (let i = 0; i < comments.length; i++) {
-                renderedResponse += pug.renderFile("./views/comment.pug", {name: comments[i].name, date: comments[i].date, text: comments[i].text});
+                renderedResponse = pug.renderFile("./views/comment.pug", {name: comments[i].name, date: comments[i].date, text: comments[i].text}) + renderedResponse;
             }
             res.render("index", {content: renderedResponse});
         } catch (error) {
@@ -20,7 +20,6 @@ module.exports = class Comment{
 
     static async addComment(req, res, next) {
         try {
-            console.log(req.body)
             const addedComment = await CommentService.addComment({name: req.body.name, text: req.body.text, ip: req.socket.remoteAddress});
             console.log("Comment added!");
             res.redirect('/');
