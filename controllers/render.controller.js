@@ -5,10 +5,12 @@ module.exports = class Comment{
     static async getAllComments(req, res, next) {
         try {
             const comments = await CommentService.gelAllComments();
-            if (!comments) {
-                renderedResponse += pug.renderFile("./views/comment.pug", {name: 'No comments yet!', date: '', text: ''});
-            }
             let renderedResponse = "";
+            console.log(comments)
+            if (!comments || comments.length == 0) {
+                console.log("no comments")
+                renderedResponse += pug.renderFile("./views/comment.pug", {name: 'No comments yet!', date: 'Infinity of time', text: 'Be first to leave a comment!'});
+            }
             for (let i = 0; i < comments.length; i++) {
                 renderedResponse = pug.renderFile("./views/comment.pug", {name: comments[i].name, date: comments[i].date, text: comments[i].text}) + renderedResponse;
             }
