@@ -20,6 +20,7 @@ module.exports = class Comment{
 
     static async addComment(req, res, next) {
         try {
+            console.log(req.body)
             const addedComment = await CommentService.addComment({name: req.body.name, text: req.body.text, ip: req.socket.remoteAddress});
             console.log("Comment added!");
             res.redirect('/');

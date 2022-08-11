@@ -1,4 +1,4 @@
-html
+htmlbody
   head
     title Simple Guestbook (MEPN stack)
     style
@@ -6,11 +6,11 @@ html
   body
     h1 Simple Guestbook
     div(class='new-comment-block')
-      form(action='' method='post' formmethod="post")
+      form(action='' method='post' formmethod='post')
         p Name:
-        input(type='text' class='name-input' id='id-comment-input' size='56' maxlength="50")
+        input(type='text' name='name' class='name-input' id='id-comment-input' size='56' maxlength='50')
         p Comment:
-        textarea(rows="4" cols="50" maxlength="200" class='text-input' id='id-comment-input')
-        input(type='submit' class="submit-button" value='Submit')
+        textarea(rows='4' cols='50' name='text' maxlength='200' class='text-input' id='id-comment-input')
+        input(type='submit' class='submit-button' value='Submit')
     div(class='comments-block')
       !=content
