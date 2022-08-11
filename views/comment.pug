@@ -1,4 +1,7 @@
 div(class='comment')
-    h1 #{name}
-    h2 #{date}
-    h3 #{text}
+    div(class='comment-header') 
+        span(class='comment-header-name')
+            b #{name}
+        span(class='comment-header-date')
+            b #{date}
+    p(class='comment-text') #{text}

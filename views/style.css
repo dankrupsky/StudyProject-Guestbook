@@ -1,0 +1,71 @@
+body {
+    background-color: brown;
+}
+
+.new-comment-block {
+    padding: 5px 0;
+    background-color: beige;
+    width: 90%;
+    max-width: 800px;
+}
+
+.new-comment-block * {
+    display: block;
+    margin: 5px 0 5px 5px;
+}
+
+.submit-button {
+    font-size: 1.4em;
+    font-weight: bold;
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.name-input {
+    width: 400px;
+}
+
+.text-input {
+    resize: none;
+    width: 400px;
+}
+
+.comments-block {
+    display: block;
+    
+    width: 90%;
+    max-width: 800px;
+}
+
+.comment {
+    background-color: azure;
+    background-color: grey;
+    margin: 10px 0 5px 0;
+    height: 142px;
+}
+
+.comment-header {
+    padding: 8px 4px;
+    background-color: white;
+    display: flex;
+}
+
+.comment-header-name {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.8em;
+    margin-right: auto;
+}
+
+.comment-header-date {
+    margin-left: auto;
+    text-align: right;
+    color: grey;
+    font-size: 1em;
+}
+
+.comment-text {
+    margin: 8px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3em;
+}
