@@ -1,5 +1,7 @@
 body {
     background-color: brown;
+    display: flex;
+    justify-content: center;
 }
 
 .new-comment-block {
