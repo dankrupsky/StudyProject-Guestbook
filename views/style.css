@@ -5,6 +5,7 @@ body {
 }
 
 .new-comment-block {
+    margin-bottom: 14px;
     padding: 5px 0;
     background-color: beige;
     width: 90%;
@@ -35,12 +36,14 @@ body {
 
 .comments-block {
     display: block;
-    
     width: 90%;
     max-width: 800px;
 }
 
 .comment {
+    border: solid black 5px;
+    border-radius: 12px;
+    overflow: hidden;
     background-color: azure;
     background-color: grey;
     margin: 10px 0 5px 0;
