@@ -1,7 +1,11 @@
 body {
-    background-color: brown;
+    background-color: #120D31;
     display: flex;
     justify-content: center;
+}
+
+h1 {
+    color: white;
 }
 
 .new-comment-block {
@@ -43,16 +47,16 @@ body {
 .comment {
     border: solid black 5px;
     border-radius: 12px;
+    border-color: #FF6700;
     overflow: hidden;
-    background-color: azure;
-    background-color: grey;
+    background-color: #4A306D;
     margin: 10px 0 5px 0;
     height: 142px;
 }
 
 .comment-header {
     padding: 8px 4px;
-    background-color: white;
+    background-color: #EFF7FF;
     display: flex;
 }
 
@@ -60,12 +64,13 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.8em;
     margin-right: auto;
+    color: darkslateblue;
 }
 
 .comment-header-date {
     margin-left: auto;
     text-align: right;
-    color: grey;
+    color: #7A7978;
     font-size: 1em;
 }
 
@@ -73,4 +78,5 @@ body {
     margin: 8px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.3em;
+    color: #EFF7FF;
 }
