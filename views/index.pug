@@ -7,11 +7,13 @@ htmlbody
     div(class='header')
       h1 Simple Guestbook
     div(class='new-comment-block')
-      form(action='' method='post' formmethod='post')
-        p Name:
-        input(type='text' name='name' class='name-input' id='id-comment-input' size='56' maxlength='50')
-        p Comment:
-        textarea(rows='4' cols='50' name='text' maxlength='200' class='text-input' id='id-comment-input')
-        input(type='submit' class='submit-button' value='Submit')
+      form(action='' method='post' formmethod='post' class='new-comment-form')
+        div(class='new-comment-input-block')
+          p Name:
+          input(type='text' name='name' class='name-input' id='id-comment-input' size='56' maxlength='50')
+          p Comment:
+          textarea(rows='4' cols='50' name='text' maxlength='200' class='text-input' id='id-comment-input')
+        div(class='new-comment-button')
+          input(type='submit' class='submit-button' value='Submit')
     div(class='comments-block')
       !=content

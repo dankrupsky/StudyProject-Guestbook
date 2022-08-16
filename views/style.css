@@ -6,6 +6,9 @@ body {
 
 h1 {
     color: white;
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
 }
 
 .new-comment-block {
@@ -22,10 +25,11 @@ h1 {
 }
 
 .submit-button {
+    background-color: #d4e3ff;
     font-size: 1.4em;
     font-weight: bold;
-    width: 100px;
-    height: 40px;
+    width: 140px;
+    height: 80px;
     margin-top: 10px;
 }
 
@@ -45,13 +49,12 @@ h1 {
 }
 
 .comment {
-    border: solid black 5px;
-    border-radius: 12px;
-    border-color: #FF6700;
+    border: solid #7A7978 4px;
+    border-radius: 6px;
     overflow: hidden;
     background-color: #4A306D;
     margin: 10px 0 5px 0;
-    height: 142px;
+    height: 120px;
 }
 
 .comment-header {
@@ -64,7 +67,7 @@ h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.8em;
     margin-right: auto;
-    color: darkslateblue;
+    color: black;
 }
 
 .comment-header-date {
@@ -77,6 +80,20 @@ h1 {
 .comment-text {
     margin: 8px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.3em;
+    font-size: 1em;
     color: #EFF7FF;
+}
+
+.new-comment-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-comment-input-block {
+    margin: 0 20px 0 0;
+}
+
+.new-comment-button {
+    margin: 0 0 0 20px;
 }
