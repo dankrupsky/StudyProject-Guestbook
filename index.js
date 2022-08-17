@@ -1,3 +1,8 @@
+/*
+** .env file example:
+** mongoURI=mongodb://localhost:27017/test
+*/
+
 const express = require('express')
 const app = express()
 const path = require("path");
